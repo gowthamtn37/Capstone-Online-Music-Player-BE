@@ -131,12 +131,8 @@ router.post("/reset", async (request, respond) => {
   }
 });
 
-router.get("/dashboard", auth, async (request, respond) => {
-  let result = await Client.db("B42WD2")
-    .collection("mobiles")
-    .find({})
-    .toArray();
-  respond.status(200).send(result);
+router.get("/", async (request, respond) => {
+  respond.send("Hello");
 });
 
 export default router;
