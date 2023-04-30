@@ -11,7 +11,7 @@ router.post("/", async (request, respond) => {
   respond.status(200).send({ message: "song uploaded successfully", result });
 });
 
-router.get("/", auth, async (request, respond) => {
+router.get("/", async (request, respond) => {
   let result = await Client.db("songdata")
     .collection("songs")
     .find({})
