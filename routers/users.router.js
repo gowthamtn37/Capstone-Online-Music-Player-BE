@@ -131,8 +131,4 @@ router.post("/reset", async (request, respond) => {
   }
 });
 
-router.get("/", async (request, respond) => {
-  respond.send("Hello");
-});
-
 export default router;

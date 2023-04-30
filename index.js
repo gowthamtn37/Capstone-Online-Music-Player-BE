@@ -5,6 +5,7 @@ import express from "express";
 import { MongoClient } from "mongodb";
 import cors from "cors";
 import userRouter from "./routers/users.router.js";
+import songRouter from "./routers/songs.router.js";
 
 const app = express();
 const PORT = process.env.PORT;
@@ -17,6 +18,7 @@ await Client.connect();
 console.log(`Connected to MongoDB`);
 
 app.use("/users", userRouter);
+app.use("/songs", songRouter);
 
 app.listen(PORT, () => {
   console.log(`Server: ${PORT}`);
